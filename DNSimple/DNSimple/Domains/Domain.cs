@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DNSimple
+namespace Conesoft.DNSimple
 {
     namespace Domains
     {

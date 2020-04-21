@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DNSimple.Accounts
+namespace Conesoft.DNSimple.Accounts
 {
     public class Account
     {

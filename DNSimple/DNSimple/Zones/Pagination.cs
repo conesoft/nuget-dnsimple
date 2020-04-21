@@ -1,4 +1,4 @@
-﻿namespace DNSimple
+﻿namespace Conesoft.DNSimple
 {
     namespace Zones
     {

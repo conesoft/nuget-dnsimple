@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace DNSimple
+namespace Conesoft.DNSimple
 {
     public class Account
     {

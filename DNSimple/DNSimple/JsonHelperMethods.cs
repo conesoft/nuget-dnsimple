@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Text.Json;
 
-namespace DNSimple
+namespace Conesoft.DNSimple
 {
     static class JsonHelperMethods
     {

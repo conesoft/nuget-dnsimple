@@ -21,5 +21,7 @@ namespace Conesoft.DNSimple
         public void UseToken(string token) => client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
         public async Task<IEnumerable<Account>> GetAccounts() => (await client.GetJsonAsync<Accounts.Response>("accounts")).data.Select(account => new Account(client, account));
+
+        public async Task<Account> GetAccount(string mail) => (await client.GetJsonAsync<Accounts.Response>("accounts")).data.Where(a => a.email == mail).Select(account => new Account(client, account)).FirstOrDefault();
     }
 }

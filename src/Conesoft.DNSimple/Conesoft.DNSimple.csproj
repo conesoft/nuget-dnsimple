@@ -6,7 +6,6 @@
     <Version>1.0.4</Version>
     <Authors>davepermen</Authors>
     <Company>Conesoft</Company>
-    <UserSecretsId>7d61f650-d0cd-472e-93f7-3c10ee09403f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

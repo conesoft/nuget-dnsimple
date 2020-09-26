@@ -17,7 +17,9 @@ namespace Conesoft.DNSimple
             this.record = record;
         }
 
+        public int Id => record.id;
         public string Type => record.type;
+        public string Name => record.name;
         public string Content => record.content;
         public string Name => record.name;
         public TimeSpan TimeToLive => TimeSpan.FromSeconds(record.ttl);

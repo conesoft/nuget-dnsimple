@@ -3,6 +3,7 @@
     public class RecordType
     {
         public static RecordType A { get; } = new RecordType("A");
+        public static RecordType TXT { get; } = new RecordType("TXT");
 
 
         readonly string type;

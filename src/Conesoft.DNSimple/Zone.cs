@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Conesoft.DNSimple
 {
@@ -23,5 +23,18 @@ namespace Conesoft.DNSimple
 
         public async Task<Record> GetRecord(Func<Record, bool> predicate) => (await GetRecords()).FirstOrDefault(predicate);
         public Task<Record> GetRecord(RecordType type) => GetRecord(record => record.Type == type.Type);
+
+        public async Task<Record> AddRecord(RecordType type, string name, string content, TimeSpan timeToLife)
+        {
+            var response = await client.PostJsonAsync($"{zone.account_id}/zones/{zone.id}/records", new
+            {
+                name,
+                type = type.Type,
+                content,
+                ttl = (int)timeToLife.TotalMilliseconds
+            });
+            var record = (await response.Response<Records.SingleResponse>()).data;
+            return new Record(client, zone, record);
+        }
     }
 }

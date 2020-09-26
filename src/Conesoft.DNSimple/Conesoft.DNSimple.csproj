@@ -3,13 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Conesoft.DNSimple</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.4</Version>
     <Authors>davepermen</Authors>
     <Company>Conesoft</Company>
+    <UserSecretsId>7d61f650-d0cd-472e-93f7-3c10ee09403f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="4.7.1" />
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
 
 </Project>

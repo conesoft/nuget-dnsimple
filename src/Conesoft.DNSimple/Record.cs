@@ -1,7 +1,6 @@
-﻿using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
-using System.Text.Json;
 
 namespace Conesoft.DNSimple
 {
@@ -20,15 +19,20 @@ namespace Conesoft.DNSimple
 
         public string Type => record.type;
         public string Content => record.content;
+        public string Name => record.name;
+        public TimeSpan TimeToLive => TimeSpan.FromSeconds(record.ttl);
 
-        public async Task UpdateContent(string content)
+        public async Task Update(string content)
         {
-            var patch = new StringContent(JsonSerializer.Serialize(new
+            await client.PatchJsonAsync($"{zone.account_id}/zones/{zone.id}/records/{record.id}", new
             {
                 content
-            }));
-            patch.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            await client.PatchAsync($"{zone.account_id}/zones/{zone.id}/records/{record.id}", patch);
+            });
+        }
+
+        public async Task Delete()
+        {
+            await client.DeleteAsync($"{zone.account_id}/zones/{zone.id}/records/{record.id}");
         }
     }
 }

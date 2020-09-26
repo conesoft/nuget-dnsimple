@@ -21,7 +21,6 @@ namespace Conesoft.DNSimple
         public string Type => record.type;
         public string Name => record.name;
         public string Content => record.content;
-        public string Name => record.name;
         public TimeSpan TimeToLive => TimeSpan.FromSeconds(record.ttl);
 
         public async Task Update(string content)

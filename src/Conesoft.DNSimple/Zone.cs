@@ -31,7 +31,7 @@ namespace Conesoft.DNSimple
                 name,
                 type = type.Type,
                 content,
-                ttl = (int)timeToLife.TotalMilliseconds
+                ttl = (int)timeToLife.TotalSeconds
             });
             var record = (await response.Response<Records.SingleResponse>()).data;
             return new Record(client, zone, record);
